@@ -1,7 +1,8 @@
+<meta name="color-scheme" content="light dark" />
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Parametres
+      Paramètres
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,13 +17,20 @@
   <ion-card style="min-height: 75%;">
     <ion-card-content>
       <ion-list>
-        <ion-item style="margin-top: 10%">
+        <ion-item lines="full">
+          <ion-icon slot="start" name="moon"></ion-icon>
+            <ion-label>
+              Dark Mode
+           </ion-label>
+          <ion-toggle id="themeToggle" (ionChange)="toggleEvent($event)" slot="end"></ion-toggle>
+        </ion-item>
+        <ion-item lines="full">
           <ion-label (click)="presentModal($event)">Profile</ion-label>
         </ion-item>
-        <ion-item style="margin-top: 10%">
+        <ion-item lines="full">
           <ion-label (click)="presentModal($event)">Statistiques</ion-label>
         </ion-item>
-        <ion-item style="margin-top: 10%">
+        <ion-item lines="full">
           <ion-label (click)="presentModal($event)">A propos</ion-label>
         </ion-item>
       </ion-list>

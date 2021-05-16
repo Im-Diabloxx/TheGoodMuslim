@@ -28,4 +28,11 @@ export class Tab3Page {
     return await modal.present();
   }
   // TODO: notification + Qasr
+
+  toggleEvent(event) {
+    if (event.detail.checked)
+      document.body.setAttribute('color-theme', 'dark');
+    else
+      document.body.setAttribute('color-theme', 'light');
+  }
 }
