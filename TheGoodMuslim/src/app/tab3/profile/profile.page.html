@@ -1,41 +1,45 @@
 <ion-content [fullscreen]="true">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Profile</ion-title>
-            <ion-button (click)="dismiss()" color="light" slot="end" style="margin-right: 3%">Close</ion-button>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-list>
-        <ion-item>
-          <ion-label>Pseudo</ion-label>
-          <ion-input placeholder="Pseudo"></ion-input>
-        </ion-item>
-      
-        <!--ion-item>
-            <ion-label>Sexe</ion-label>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-button (click)="dismiss()" color="light" slot="start" style="margin-right: 3%">Close</ion-button>
+      <ion-title>Profil</ion-title>
+      <ion-button (click)="save()" color="primary" slot="end" style="margin-right: 3%">Save</ion-button>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>Pseudo</ion-label>
+        <ion-input type="text" text-right id="pseudo" (ionInput)="handlePseudo($event)" placeholder="Pseudo"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!--ion-item>
+          <ion-label>Sexe</ion-label>
           <ion-radio-group value="homme">
             <ion-item >
               <ion-label>Homme</ion-label>
               <ion-radio slot="start" color="success" value="homme"></ion-radio>
             </ion-item>
-  
+            
             <ion-item>
               <ion-label>Femme</ion-label>
               <ion-radio slot="start" color="tertiary" value="femme"></ion-radio>
             </ion-item>
-  
-            </ion-radio-group>
+            
+          </ion-radio-group>
         </ion-item-->
-      
-        <ion-item style="margin-top: 10%">
-            <ion-label position="stacked">Adresse</ion-label>
-            <ion-input placeholder="Address Ligne 1"></ion-input>
-            <ion-input placeholder="Address Ligne 2"></ion-input>
-            <ion-input placeholder="Ville"></ion-input>
-            <ion-input placeholder="Pays"></ion-input>
-            <ion-input placeholder="Code Postale"></ion-input>
-          </ion-item>
-  
-      </ion-list>
-  
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label position="stacked">Adresse</ion-label>
+        <ion-input type="text" id="street" placeholder="Rue" (ionInput)="handleAddress($event)"></ion-input>
+        <ion-input type="text" id="city" placeholder="Ville" (ionInput)="handleAddress($event)"></ion-input>
+        <ion-input type="text" id="postalCode" placeholder="Code Postale" (ionInput)="handleAddress($event)"></ion-input>
+        <ion-input type="text" id="country" placeholder="Pays" (ionInput)="handleAddress($event)"></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

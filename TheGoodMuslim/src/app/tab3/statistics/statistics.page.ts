@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-statistics',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 export class StatisticsPage {
 
-  constructor() {}
+  constructor(public modalController: ModalController) {}
 
+  dismiss() {
+    this.modalController.dismiss({
+      dismissed: true
+    });
+  }
 }

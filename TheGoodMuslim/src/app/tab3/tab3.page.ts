@@ -17,7 +17,7 @@ export class Tab3Page {
 
   async presentModal(event) {
     const components = {
-      Profile: ProfilePage,
+      Profil: ProfilePage,
       Statistiques: StatisticsPage,
       'A propos': AboutPage
     };
@@ -30,9 +30,11 @@ export class Tab3Page {
   // TODO: notification + Qasr
 
   toggleEvent(event) {
-    if (event.detail.checked)
+    if (event.detail.checked) {
       document.body.setAttribute('color-theme', 'dark');
-    else
+    }
+    else {
       document.body.setAttribute('color-theme', 'light');
+    }
   }
 }
